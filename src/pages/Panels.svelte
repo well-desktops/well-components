@@ -1,6 +1,6 @@
 <script lang="ts">
   import { highlight } from "../utility";
-  import Panel from "../components/panel/index.svelte";
+  import { Panel } from '../index';
 </script>
 
 <Panel title="Simple panel">

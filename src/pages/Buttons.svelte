@@ -1,7 +1,6 @@
 <script lang="ts">
   import { highlight } from "../utility";
-  import Panel from "../components/panel/index.svelte";
-  import Button from "../components/button/index.svelte";
+  import { Button, Panel } from '../index';
 
   const help = (event: CustomEvent) => {
     alert(event.detail.text);

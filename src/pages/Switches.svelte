@@ -1,8 +1,6 @@
-
 <script lang="ts">
- import { highlight } from "../utility";
-   import Panel from '../components/panel/index.svelte';
-  import Switch from '../components/switch/index.svelte';
+  import { highlight } from "../utility";
+  import { Switch, Panel } from "../index";
 
   let checked = false;
   let checked2 = true;
@@ -18,12 +16,9 @@
     <Switch label="Switch on (disabled)" checked={true} disabled={true} />
   </div>
 
-  <br>
+  <br />
   <h3>Code example:</h3>
   <div class="w-code">
-    {@html highlight(
-      '<Switch label="Switch {checked1 ? "on" : "off"}" bind:checked />\n' +
-      '<Switch label="Switch on (disabled)" checked={true} disabled={true} />'
-    )}
+    {@html highlight('<Switch label="Switch {checked1 ? "on" : "off"}" bind:checked />\n' + '<Switch label="Switch on (disabled)" checked={true} disabled={true} />')}
   </div>
 </Panel>

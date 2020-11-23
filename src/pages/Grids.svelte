@@ -1,7 +1,6 @@
 <script lang="ts">
   import { highlight } from "../utility";
-  import Panel from "../components/panel/index.svelte";
-  import Divider from "../components/divider/index.svelte";
+  import { Divider, Panel } from '../index';
 </script>
 
 <Panel title="Grid">
