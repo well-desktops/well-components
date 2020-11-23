@@ -1,0 +1,47 @@
+@use '../colors';
+
+.w-divider {
+  display: block;
+
+  &-horizontal {
+    height: 1px;
+    width: 100%;
+    min-width: 100%;
+    // margin: 0px 0;
+    clear: both;
+    padding-bottom: 10px;  
+  }
+
+  &-title {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
+    color: $primary-color-strong;
+    padding-bottom: 3px;
+    clear: both;
+  }
+
+  &-small {
+    border-bottom: 1px solid $primary-color-elements;
+  }
+
+  &-medium {
+    border-bottom: 2px solid $primary-color-elements;;
+  }
+
+  &-large {
+    border-bottom: 3px solid $primary-color-elements;;
+  }
+
+  &-vertical-small {
+    border-right: 1px solid $primary-color-elements;
+  }
+
+  &-vertical-medium {
+    border-right: 2px solid $primary-color-elements;
+  }
+
+  &-vertical-large {
+    border-right: 3px solid $primary-color-elements;
+  }
+}

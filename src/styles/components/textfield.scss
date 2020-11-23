@@ -1,0 +1,71 @@
+@use '../colors';
+
+.w-textfield {
+  width: 200px;
+  
+  input {
+    border-radius: 4px;
+    color: $primary-color;
+    border: 1px solid $primary-color-disabled;
+    outline: none;
+    height: 30px;
+    padding: 8px;
+    width: 100%;
+  }
+
+  input:focus {
+    border: 1px solid $active;
+  }
+
+  input.w-textfield-invalid {
+    border: 1px solid $alert;
+  }
+
+  &-label {
+    padding-bottom: 5px;
+  }
+
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-style: italic;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    font-style: italic;
+  }
+
+  input:hover {
+    color: $primary-color-hover;
+  }
+
+  input:hover:disabled {
+    color: $primary-color;
+  }
+
+  &-disabled {
+    color: $primary-color-disabled;
+  }
+
+  &-icon {
+    display: inline-block;
+    position: relative;
+    width: 16px;
+    height: 16px;          
+    background-size: cover;
+    margin-right: 0px;
+    background-color: $primary-color;  
+  }
+
+  .icon-checkmark {
+    top: -22px;
+    left: 175px;
+    background-color: $valid;
+  }
+
+  .icon-alert {
+    top: -22px;
+    left: 175px;
+    background-color: rgb(168, 18, 18);
+  }
+
+
+}
+

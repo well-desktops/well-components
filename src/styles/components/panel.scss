@@ -1,0 +1,27 @@
+@use '../colors';
+
+.w-panel {
+  padding: 10px;
+  width: 100%;
+  border-radius: 4px;
+  font-size: 14px;
+  color: $primary-color;
+  background-color: $background-color;
+  margin-bottom: 20px;
+
+  &-shadow {
+    -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    -moz-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+
+  &-title {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 13px;
+    color: $primary-color-strong;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $primary-color-elements;
+    clear: both;
+  }
+}

@@ -1,0 +1,65 @@
+@use '../colors';
+
+.w-sidebar {
+  height: 100%;
+  overflow-x: hidden;
+  font-size: 14px;
+
+  .w-sidebar-section {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
+    color: $primary-color-strong;
+    padding: 0px 0px 5px 5px;
+  }
+
+  .icon {
+    background-color: $primary-color;
+    position: relative;
+    top: 3px;
+    margin-right: 5px;
+  }
+
+  &-separator {
+    padding: 10px;
+  }
+
+  &-link {
+    padding: 6px 8px 8px 20px;
+    margin: 0px 15px 3px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: $primary-color;
+    display: block;
+  }
+
+  &-link-active {
+    // font-weight: 600;
+    color: $primary-color-hover;
+    background-color: $primary-background-color-hover;
+  }
+
+  &-link:hover {
+    // font-weight: 600;
+    color: $primary-color-hover;
+    background-color: $primary-background-color-hover;
+
+    .icon {
+      background-color: $primary-color-hover;
+    }
+  }
+
+  &-link-disabled {
+    padding: 6px 8px 6px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: $primary-color-disabled;
+    display: block;
+    cursor: default;
+
+    .icon {
+      background-color: $primary-color-disabled;
+    }
+  }
+
+}

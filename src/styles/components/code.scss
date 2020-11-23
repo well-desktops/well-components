@@ -1,0 +1,29 @@
+@use '../colors';
+
+.w-code {
+  font-family: 'Courier Prime';
+  // font-weight: 600;
+  font-size: 14px;
+  border-radius: 4px;
+  background-color: $primary-color-background;
+  padding: 1px 10px;
+  // padding-left: 10px;
+  width: 100%;
+  // color: #905;
+  margin-bottom: 10px;
+
+  span {
+    color: #905;
+  }
+
+  .punctuation {
+    color: green;
+  }
+
+  .attr-name {
+    color: #690;
+  }
+  .attr-value {
+    color: #07a;
+  }
+}

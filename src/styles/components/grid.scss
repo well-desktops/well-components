@@ -1,0 +1,47 @@
+@use '../colors';
+
+.w-grid {
+  margin: 10px;
+  display: grid;
+  
+  &-container-2-4 {
+    grid-template-columns: 4em 4em;
+  }
+
+  &-container-2-8 {
+    grid-template-columns: 8em 8em;
+  }
+
+  &-container-2-12 {
+    grid-template-columns: 12em 12em;
+  }
+
+  &-container-2-16 {
+    grid-template-columns: 16em 16em;
+  }
+
+  &-container-3-4 {
+    grid-template-columns: 4em 4em 4em;
+  }
+
+  &-container-3-6 {
+    grid-template-columns: 6em 6em 6em;
+  }
+
+  &-container-3-8 {
+    grid-template-columns: 8em 8em 8em;
+  }
+
+  &-container-3-10 {
+    grid-template-columns: 10em 10em 10em;
+  }
+
+  &-container-3-12 {
+    grid-template-columns: 12em 12em 12em;
+  }
+
+  &-container-3-14 {
+    grid-template-columns: 14em 14em 14em;
+  }
+
+}

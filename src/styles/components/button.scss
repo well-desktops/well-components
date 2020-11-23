@@ -1,0 +1,56 @@
+@use '../colors';
+
+.w-button {
+  border-radius: 3px;
+  cursor: pointer;
+  border: 1px solid $primary-color;
+  display: inline;
+  padding: 5px;
+  margin-right: 5px;  
+
+  &-primary {
+    color: $primary-color;
+    background-color: $primary-color-background;
+  }
+
+  &-secondary {
+    border: 1px solid $primary-color-disabled;
+    background-color: $secondary-background-color;
+  }
+
+  &-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;          
+    background-size: cover;
+    margin-right: 0px;
+    background-color: $primary-color;
+  
+    position: relative;
+    top: 4px;
+    left: 2px;
+  }
+
+  &-primary:hover,
+  &-secondary:hover {
+    color: $primary-color-hover;
+    background-color: $primary-background-color-hover;
+
+    .w-button-icon {
+      background-color: $primary-color-hover;
+    }
+  }
+
+  &-disabled,
+  &-disabled:hover {
+    cursor: default;
+    color: $primary-color-disabled;
+    background-color: $primary-color-background;
+    border: 1px solid $primary-color-disabled;
+
+    .w-button-icon {
+      background-color: $primary-color-disabled;
+    }
+  }
+
+}

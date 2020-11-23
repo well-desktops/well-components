@@ -1,0 +1,49 @@
+@use 'colors';
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  font-family: 'Cabin';
+  // font-size: 15px;
+}
+
+.w-container {
+  display: grid;
+  grid-template-columns: minmax(150px, 20%) 1fr;
+  height: 90vh;
+}
+
+main {
+  padding: 20px;
+  // text-align: center;
+}
+
+// main {
+  // background: #d4f2c4;
+// }
+
+aside {
+  // background: #81cfd9;
+  border-right: 2px solid $primary-background-color-hover;
+  .w-logo {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: $primary-color;
+  }
+}
+
+h2 {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  color: $primary-color-strong;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 11px;
+  color: $primary-color-strong;
+}
