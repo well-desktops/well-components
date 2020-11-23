@@ -1,6 +1,6 @@
 @use '../colors';
 
-.w-textfield {
+.w-search {
   width: 200px;
   
   input {
@@ -9,16 +9,12 @@
     border: 1px solid $primary-color-disabled;
     outline: none;
     height: 30px;
-    padding: 8px;
+    padding: 0px 30px;
     width: 100%;
   }
 
   input:focus {
     border: 1px solid $active;
-  }
-
-  input.w-textfield-invalid {
-    border: 1px solid $alert;
   }
 
   &-label {
@@ -54,17 +50,19 @@
     background-color: $primary-color;  
   }
 
-  .icon-checkmark {
+  .icon-search {
     top: -22px;
-    left: 175px;
-    background-color: $valid;
+    left: 10px;
   }
 
-  .icon-alert {
-    top: -22px;
-    left: 175px;
-    background-color: $alert;
+  .icon-close {
+    width: 12px;
+    height: 12px;          
+    top: -24px;
+    // left: 160px;
+    cursor: pointer;
   }
+
 
 }
 

@@ -8,6 +8,7 @@
 import Button from './components/button/index.svelte';
 import Panel from './components/panel/index.svelte';
 import Divider from './components/divider/index.svelte';
+import Search from './components/search/index.svelte';
 import Switch from './components/switch/index.svelte';
 import TextField from './components/textfield/index.svelte';
 
@@ -15,6 +16,7 @@ export {
   Button,
   Panel,
   Divider,
+  Search,
   Switch,
   TextField
 }

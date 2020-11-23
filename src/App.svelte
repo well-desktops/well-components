@@ -10,6 +10,7 @@
     { path: '/divider', title: 'Divider', component: pages.Dividers },
     { path: '/grid', title: 'Grid', component: pages.Grids },
     { path: '/panel', title: 'Panel', component: pages.Panels },
+    { path: '/search', title: 'Search', component: pages.Searches },
     { path: '/switch', title: 'Switch', component: pages.Switches },
     { path: '/textfield', title: 'Text Field', component: pages.TextFields },
   ];

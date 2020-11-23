@@ -140,3 +140,19 @@
   mask-repeat: no-repeat;
 }
 
+.icon-search {
+  mask: url(../icons/Search.svg);
+  -webkit-mask-image: url(../icons/Search.svg);
+  -webkit-mask-size: 100%;
+  mask-size: 100%;
+  mask-repeat: no-repeat;
+}
+
+.icon-close {
+  mask: url(../icons/Close.svg);
+  -webkit-mask-image: url(../icons/Close.svg);
+  -webkit-mask-size: 100%;
+  mask-size: 100%;
+  mask-repeat: no-repeat;
+}
+
