@@ -27,10 +27,10 @@ import type { bind } from "svelte/internal";
   $: activeTab2 = items1.filter(t => t.active);
 </script>
 
-<Panel title="Tabs component">
-  <p>
+<div class="w-title">Tabs</div>
+
+<Panel>
     Tabs component is implemnted as a container for one or more tabs.
-  </p>
 </Panel>
 
 <Panel title="Basic tabs" shadow={true}>

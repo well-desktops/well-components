@@ -5,7 +5,9 @@
 </script>
 
 <div class={elClasses}>
+  {#if title}
   <div class="w-panel-title">{title}</div>
   <br>
+  {/if}
   <slot></slot>
 </div>

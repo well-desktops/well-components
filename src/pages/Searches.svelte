@@ -5,7 +5,9 @@
 
 </script>
 
-<Panel title="Search" shadow={true}>
+<div class="w-title">Search</div>
+
+<Panel shadow={true}>
   <div class="w-grid w-grid-container-2-20">
     <Search label="Search" placeholder="Search" width={250}/>
     <Search label="Search disabled" placeholder="Search" disabled={true} />

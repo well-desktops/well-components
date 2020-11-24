@@ -8,7 +8,9 @@
   let checked2 = true;
 </script>
 
-<Panel title="Switch" shadow={true}>
+<div class="w-title">Switch</div>
+
+<Panel shadow={true}>
   <div class="w-grid w-grid-container-2-16">
     <Switch label="Switch {checked ? 'on' : 'off'}" bind:checked />
     <Switch label="Switch {checked2 ? 'on' : 'off'}" bind:checked={checked2} />

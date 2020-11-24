@@ -11,12 +11,13 @@
 .w-container {
   display: grid;
   grid-template-columns: minmax(150px, 20%) 1fr;
-  height: 95vh;
+  // height: 99vh;
+  height: calc(100vh - 20px);
   overflow: hidden;
 }
 
 main {
-  padding: 20px;
+  padding: 15px;
   overflow-y: scroll;
 }
 
@@ -27,13 +28,20 @@ main {
 aside {
   // background: #81cfd9;
   border-right: 2px solid $primary-background-color-hover;
-  .w-logo {
-    padding: 10px;
-    font-size: 18px;
-    font-weight: 600;
-    color: $primary-color;
-  }
 }
+
+.w-title {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Crete Round';
+  font-size: 22px;
+  // font-weight: 600;
+  color: $primary-color-strong;
+  padding: 0 0 15px 0;
+}
+// h1 {
+//   font-weight: 600;
+//   // font-size: 12px;
+// }
 
 h2 {
   text-transform: uppercase;

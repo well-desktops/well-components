@@ -4,6 +4,8 @@
   import Code from "../components/code/index.svelte";
 </script>
 
+<div class="w-title">Divider</div>
+
 <Panel title="Divider vertical" shadow={true}>
   <div style="display: inline-block; margin: 0px">Text 1</div>
   <div style="display: inline-block;">

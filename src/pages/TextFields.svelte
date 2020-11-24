@@ -4,6 +4,8 @@
   import Code from '../components/code/index.svelte';
 </script>
 
+<div class="w-title">Text Field</div>
+
 <Panel title="Standard Text Field" shadow={true}>
   <div>
     <TextField label="First Name" placeholder="Enter your name" />

@@ -8,7 +8,9 @@
   }
 </script>
 
-<Panel title="Component Button" shadow={true}>
+<div class="w-title">Button</div>
+
+<Panel shadow={true}>
   <p>
     Basic component that is used to trigger bussiness logic. It also supports focus (mouse and keyboard separately), 
     hover and disabled states.

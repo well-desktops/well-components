@@ -1,17 +1,25 @@
 @use '../colors';
 
+.w-logo {
+  font-family: 'Crete Round';
+  padding: 15px 28px;
+  font-size: 22px;
+  // font-weight: 600;
+  color: $primary-color-strong;
+}
+
 .w-sidebar {
   height: 100%;
   overflow-x: hidden;
   font-size: 14px;
 
-  .w-sidebar-section {
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 12px;
-    color: $primary-color-strong;
-    padding: 0px 0px 5px 5px;
-  }
+  // .w-sidebar-section {
+  //   text-transform: uppercase;
+  //   font-weight: 600;
+  //   font-size: 12px;
+  //   color: $primary-color-strong;
+  //   // padding: 0px 0px 5px 5px;
+  // }
 
   .icon {
     background-color: $primary-color;
@@ -20,17 +28,24 @@
     margin-right: 5px;
   }
 
-  &-separator {
-    padding: 10px;
-  }
+  // &-separator {
+    // padding: 10px;
+  // }
 
   &-link {
-    padding: 6px 8px 8px 20px;
-    margin: 0px 15px 3px 10px;
+    padding: 6px 8px 6px 30px;
+    margin: 0px 15px 2px 10px;
     border-radius: 4px;
     text-decoration: none;
     color: $primary-color;
     display: block;
+  }
+
+  &-link-topic {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 6px 8px 6px 20px;
+    font-weight: 600;
+    // font-size: 18px;
   }
 
   &-link-active {

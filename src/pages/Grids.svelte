@@ -5,7 +5,9 @@
 
 </script>
 
-<Panel title="Grid" shadow={true}>
+<div class="w-title">Grid</div>
+
+<Panel shadow={true}>
   <div class="w-grid w-grid-container-2-4">
     <div>C1</div>
     <div>C2</div>

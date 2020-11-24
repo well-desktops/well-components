@@ -4,9 +4,12 @@
   import pages from './pages';
   import Sidebar from "./components/sidebar/index.svelte";
 
-  const title="Components Library";
+  const title="Well Components";
   const routes = [
-    { path: '/', title: 'Button', component: pages.Buttons },
+    { path: '/', title: 'Get Started', component: pages.GetStarted, topic: true },
+    { path: 'https://github.com/well-desktops/well-components', title: 'GetHub', topic: true },
+    { path: '#', title: 'Components', topic: true },
+    { path: '/button', title: 'Button', component: pages.Buttons },
     { path: '/divider', title: 'Divider', component: pages.Dividers },
     { path: '/grid', title: 'Grid', component: pages.Grids },
     { path: '/panel', title: 'Panel', component: pages.Panels },
@@ -17,7 +20,7 @@
   ];
 
   // set default component
-  let component = pages.Buttons;
+  let component = pages.GetStarted;
 
   // Map routes to page. If a route is hit the current
   // reference is set to the route's component

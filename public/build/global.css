@@ -195,23 +195,25 @@
 .w-container {
   display: grid;
   grid-template-columns: minmax(150px, 20%) 1fr;
-  height: 95vh;
+  height: calc(100vh - 20px);
   overflow: hidden;
 }
 
 main {
-  padding: 20px;
+  padding: 15px;
   overflow-y: scroll;
 }
 
 aside {
   border-right: 2px solid #eeeeee;
 }
-aside .w-logo {
-  padding: 10px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #515151;
+
+.w-title {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Crete Round";
+  font-size: 22px;
+  color: #616161;
+  padding: 0 0 15px 0;
 }
 
 h2 {
@@ -392,7 +394,7 @@ h3 {
 }
 .w-panel-title {
   font-family: "Crete Round";
-  font-size: 18px;
+  font-size: 17px;
   color: #515151;
   padding-bottom: 5px;
   border-bottom: 1px solid #dddddd;
@@ -454,17 +456,17 @@ h3 {
   cursor: pointer;
 }
 
+.w-logo {
+  font-family: "Crete Round";
+  padding: 15px 28px;
+  font-size: 22px;
+  color: #616161;
+}
+
 .w-sidebar {
   height: 100%;
   overflow-x: hidden;
   font-size: 14px;
-}
-.w-sidebar .w-sidebar-section {
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 12px;
-  color: #616161;
-  padding: 0px 0px 5px 5px;
 }
 .w-sidebar .icon {
   background-color: #515151;
@@ -472,16 +474,18 @@ h3 {
   top: 3px;
   margin-right: 5px;
 }
-.w-sidebar-separator {
-  padding: 10px;
-}
 .w-sidebar-link {
-  padding: 6px 8px 8px 20px;
-  margin: 0px 15px 3px 10px;
+  padding: 6px 8px 6px 30px;
+  margin: 0px 15px 2px 10px;
   border-radius: 4px;
   text-decoration: none;
   color: #515151;
   display: block;
+}
+.w-sidebar-link-topic {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 6px 8px 6px 20px;
+  font-weight: 600;
 }
 .w-sidebar-link-active {
   color: #212121;
