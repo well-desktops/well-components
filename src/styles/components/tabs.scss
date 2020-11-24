@@ -10,6 +10,9 @@
   .w-tab {
     display: inline;
     cursor: pointer;
+    padding: 0px 10px 10px 10px;
+    margin-right: 10px;
+    border-bottom: 1px solid $primary-color-disabled;
   }
 
   &-shadow {
@@ -36,22 +39,23 @@
 
     position: relative;
     top: 4px;
-    left: 20px;
+    // left: 20px;
   }
 
   &-title {
     cursor: pointer;
     display: table-cell;
-    padding: 0px 10px 10px 15px;
-    border-bottom: 1px solid $primary-color-disabled;
+    // padding: 0px 10px 10px 15px;
+    // border-bottom: 1px solid $primary-color-disabled;
   }
 
   &-icon.active {
-    background-color: $primary-color-strong
+    background-color: $primary-color-strong;
   }
 
   .active {
     color: $primary-color;
+    padding: 0 10px 9px 10px;
     border-bottom: 2px solid $primary-color;
   }
 

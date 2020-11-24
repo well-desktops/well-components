@@ -195,11 +195,13 @@
 .w-container {
   display: grid;
   grid-template-columns: minmax(150px, 20%) 1fr;
-  height: 90vh;
+  height: 95vh;
+  overflow: hidden;
 }
 
 main {
   padding: 20px;
+  overflow-y: scroll;
 }
 
 aside {
@@ -563,6 +565,9 @@ h3 {
 .w-tabs .w-tab {
   display: inline;
   cursor: pointer;
+  padding: 0px 10px 10px 10px;
+  margin-right: 10px;
+  border-bottom: 1px solid #b1b1b1;
 }
 .w-tabs-shadow {
   -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -584,19 +589,17 @@ h3 {
   background-color: #b1b1b1;
   position: relative;
   top: 4px;
-  left: 20px;
 }
 .w-tabs-title {
   cursor: pointer;
   display: table-cell;
-  padding: 0px 10px 10px 15px;
-  border-bottom: 1px solid #b1b1b1;
 }
 .w-tabs-icon.active {
   background-color: #616161;
 }
 .w-tabs .active {
   color: #515151;
+  padding: 0 10px 9px 10px;
   border-bottom: 2px solid #515151;
 }
 

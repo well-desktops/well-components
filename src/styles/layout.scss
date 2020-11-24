@@ -11,12 +11,13 @@
 .w-container {
   display: grid;
   grid-template-columns: minmax(150px, 20%) 1fr;
-  height: 90vh;
+  height: 95vh;
+  overflow: hidden;
 }
 
 main {
   padding: 20px;
-  // text-align: center;
+  overflow-y: scroll;
 }
 
 // main {
