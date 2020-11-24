@@ -1,6 +1,8 @@
 <script lang="ts">
   import { highlight } from "../utility";
   import { Search, Panel } from '../index';
+  import Code from '../components/code/index.svelte';
+
 </script>
 
 <Panel title="Search" shadow={true}>
@@ -9,11 +11,9 @@
     <Search label="Search disabled" placeholder="Search" disabled={true} />
   </div>
 
-  <h3>Code example:</h3>
-  <div class="w-code">
+  <Code>
     {@html highlight('<Search label="Search" placeholder="Search" width={200}/>\n' +
     '<Search label="Phone disabled" placeholder="Search" disabled={true} />')}
-  </div>
+  </Code>
 </Panel>
-
 

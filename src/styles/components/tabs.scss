@@ -1,0 +1,30 @@
+@use '../colors';
+
+.w-tabs {
+  color: $primary-color-disabled;
+  background-color: $background-color;
+  padding-bottom: 10px;
+
+  // &-shadow {
+  //   -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  //   -moz-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  //   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  // }
+
+  &-title {
+    cursor: pointer;
+    display: table-cell;
+    padding: 0px 15px 5px 15px;
+    border-bottom: 1px solid $primary-color-disabled;
+  }
+
+  &-title:hover {
+    color: $primary-color-hover;
+  }
+
+  .active {
+    color: $primary-color;
+    border-bottom: 2px solid $primary-color;
+  }
+
+}

@@ -1,20 +1,35 @@
 <script lang="ts">
   import { highlight } from "../utility";
-  import { Divider, Panel } from '../index';
+  import { Divider, Panel } from "../index";
+  import Code from "../components/code/index.svelte";
 </script>
 
 <Panel title="Divider vertical" shadow={true}>
-  <div style="display: inline-block; margin: 10px">Text 1</div>
-  <div style="display: inline-block;"><Divider type="vertical" /></div>
+  <div style="display: inline-block; margin: 0px">Text 1</div>
+  <div style="display: inline-block;">
+    <Divider type="vertical" />
+  </div>
   <div style="display: inline-block; margin: 10px">Text 2</div>
-  <div style="display: inline-block;"><Divider type="vertical" size="medium"/></div>
+  <div style="display: inline-block;">
+    <Divider type="vertical" size="medium" />
+  </div>
   <div style="display: inline-block; margin: 10px">Text 2</div>
-  <div style="display: inline-block;"><Divider type="vertical" size="large" /></div>
+  <div style="display: inline-block;">
+    <Divider type="vertical" size="large" />
+  </div>
   <div style="display: inline-block; margin: 10px">Text 2</div>
+
+  <Code>
+    {@html highlight(
+      '<Divider type="vertical" size="small" /> \n' +
+      '<Divider type="vertical" size="medium" /> \n' +
+      '<Divider type="vertical" size="large" /> '
+    )}
+  </Code>
 </Panel>
 
 <Panel title="Divider standard" shadow={true}>
-    <div>
+  <div>
     <Divider title="Small" />
     <br />
     <br />
@@ -32,19 +47,7 @@
     <br />
   </div>
 
-  <div>
-    <Divider title="X Large" size="x-large" />
-    <br />
-    <br />
-  </div>
-
-  <div>
-    <Divider title="XX Large" size="xx-large" />
-    <br />
-    <br />
-    <h3>Code example:</h3>
-    <div class="w-code">
-      {@html highlight('<Divider title="Small"/>\n' + '<Divider title="Medium" size="medium"/>\n' + '<Divider title="Large" size="large"/>\n' + '<Divider title="X Large" size="x-large"/>\n' + '<Divider title="XX Large" size="xx-large"/>')}
-    </div>
-  </div>
+  <Code>
+    {@html highlight('<Divider title="Small"/>\n' + '<Divider title="Medium" size="medium"/>\n' + '<Divider title="Large" size="large"/>\n')}
+  </Code>
 </Panel>

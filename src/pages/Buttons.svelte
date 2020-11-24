@@ -1,13 +1,14 @@
 <script lang="ts">
   import { highlight } from "../utility";
   import { Button, Panel } from '../index';
+  import Code from '../components/code/index.svelte';
 
   const help = (event: CustomEvent) => {
     alert(event.detail.text);
   }
 </script>
 
-<Panel title="Button" shadow={true}>
+<Panel title="Component Button" shadow={true}>
   <p>
     Basic component that is used to trigger bussiness logic. It also supports focus (mouse and keyboard separately), 
     hover and disabled states.
@@ -32,16 +33,14 @@
     <Button title="Primary" on:click={help} />
   </p>
 
-  <br>
-  <h3>Code example:</h3>
-  <div class="w-code">
+  <Code>
     {@html highlight(
       '<Button icon="icon-help" on:click={clickHandler} />\n' + 
       '<Button icon="icon-settings" title="Settings" />\n' + 
       '<Button icon="icon-chat" title="Chat" disabled={true} on:click={clickHandler} />\n' +
       '<Button title="Primary" on:click={clickHandler} />'
     )}
-  </div>
+  </Code>
 
 </Panel>
 
@@ -52,12 +51,10 @@
     <Button secondary={true} icon="icon-bell" title="Bell" />
   </p>
 
-  <br>
-  <h3>Code example:</h3>
-  <div class="w-code">
+  <Code>
     {@html highlight(
       '<Button secondary={true} title="Secondary" />\n' + 
       '<Button secondary={true} title="Disabled" disabled={true} />\n' + 
       '<Button secondary={true} icon="icon-bell" title="Bell" />')}
-  </div>
+    </Code>
 </Panel>

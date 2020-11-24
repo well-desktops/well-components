@@ -5,6 +5,7 @@ import Grids from "./Grids.svelte";
 import Panels from "./Panels.svelte";
 import Searches from "./Searches.svelte";
 import Switches from "./Switches.svelte";
+import Tabs from "./Tabs.svelte";
 import TextFields from "./TextFields.svelte";
 
 export default {
@@ -14,5 +15,6 @@ export default {
   Panels,
   Searches,
   Switches,
+  Tabs,
   TextFields
 }

@@ -12,6 +12,7 @@
     { path: '/panel', title: 'Panel', component: pages.Panels },
     { path: '/search', title: 'Search', component: pages.Searches },
     { path: '/switch', title: 'Switch', component: pages.Switches },
+    { path: '/tabs', title: 'Tabs', component: pages.Tabs },
     { path: '/textfield', title: 'Text Field', component: pages.TextFields },
   ];
 

@@ -1,26 +1,25 @@
 <script lang="ts">
   import { highlight } from "../utility";
   import { Panel, TextField } from "../index";
+  import Code from '../components/code/index.svelte';
 </script>
 
 <Panel title="Standard Text Field" shadow={true}>
-  <TextField label="First Name" placeholder="Enter your name" />
-
-  <br />
-  <h3>Code example:</h3>
-  <div class="w-code">
-    {@html highlight('<TextField label="First Name" placeholder="Enter your name" />')}
+  <div>
+    <TextField label="First Name" placeholder="Enter your name" />
   </div>
+
+  <Code>
+    {@html highlight('<TextField label="First Name" placeholder="Enter your name" />')}
+  </Code>
 </Panel>
 
 <Panel title="Disabled Text Field" shadow={true}>
   <TextField label="Last Name" placeholder="Enter your name" disabled={true} />
 
-  <br />
-  <h3>Code example:</h3>
-  <div class="w-code">
+  <Code>
     {@html highlight('<TextField label="Last Name" placeholder="Enter your name" disabled={true}/>')}
-  </div>
+  </Code>
 </Panel>
 
 <Panel title="Valid Text Field" shadow={true}>
@@ -33,10 +32,9 @@
       disabled={true} />
   </div>
 
-  <h3>Code example:</h3>
-  <div class="w-code">
+  <Code>
     {@html highlight('<TextField label="Phone" value="178 35 456666" valid={true}/>\n' + '<TextField label="Phone disabled" value="178 35 4566366" valid={true} disabled={true} />')}
-  </div>
+  </Code>
 </Panel>
 
 <Panel title="Invalid Text Field" shadow={true}>
@@ -49,8 +47,7 @@
       disabled={true} />
   </div>
 
-  <h3>Code example:</h3>
-  <div class="w-code">
+  <Code>
     {@html highlight('<TextField label="Phone" value="178 35 456666" valid={false}/>\n' + '<TextField label="Phone disabled" value="178 35 4566366" valid={false} disabled={true} />')}
-  </div>
+  </Code>
 </Panel>
