@@ -3,7 +3,7 @@
   import { Panel, TextField } from "../index";
 </script>
 
-<Panel title="Standard Text Field">
+<Panel title="Standard Text Field" shadow={true}>
   <TextField label="First Name" placeholder="Enter your name" />
 
   <br />
@@ -13,7 +13,7 @@
   </div>
 </Panel>
 
-<Panel title="Disabled Text Field">
+<Panel title="Disabled Text Field" shadow={true}>
   <TextField label="Last Name" placeholder="Enter your name" disabled={true} />
 
   <br />
@@ -23,7 +23,7 @@
   </div>
 </Panel>
 
-<Panel title="Valid Text Field">
+<Panel title="Valid Text Field" shadow={true}>
   <div class="w-grid w-grid-container-2-16">
     <TextField label="Phone" value="178 35 456666" valid={true} />
     <TextField
@@ -39,7 +39,7 @@
   </div>
 </Panel>
 
-<Panel title="Invalid Text Field">
+<Panel title="Invalid Text Field" shadow={true}>
   <div class="w-grid w-grid-container-2-16">
     <TextField label="Phone" value="178 35 456" valid={false} />
     <TextField
