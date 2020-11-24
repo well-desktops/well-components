@@ -4,22 +4,50 @@
   color: $primary-color-disabled;
   background-color: $background-color;
   padding-bottom: 10px;
+  display: inline;
 
-  // &-shadow {
-  //   -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  //   -moz-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  //   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  // }
+
+  .w-tab {
+    display: inline;
+    cursor: pointer;
+  }
+
+  &-shadow {
+    -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    -moz-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+
+  .w-tab:hover {
+    color: $primary-color-hover;
+    .w-tabs-icon {
+      background-color: $primary-color-strong;
+    }
+  }
+
+
+  &-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;          
+    background-size: cover;
+    margin-right: 0px;
+    background-color: $primary-color-disabled;
+
+    position: relative;
+    top: 4px;
+    left: 20px;
+  }
 
   &-title {
     cursor: pointer;
     display: table-cell;
-    padding: 0px 15px 5px 15px;
+    padding: 0px 10px 10px 15px;
     border-bottom: 1px solid $primary-color-disabled;
   }
 
-  &-title:hover {
-    color: $primary-color-hover;
+  &-icon.active {
+    background-color: $primary-color-strong
   }
 
   .active {

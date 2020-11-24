@@ -8,7 +8,14 @@
     { title: 'Tab 2', active: false },
     { title: 'Tab 3', active: false },
     { title: 'Tab 4', active: false },
-];
+  ];
+
+  const items1 = [
+    { title: 'Tab 1', active: false, icon: 'icon-bell' },
+    { title: 'Tab 2', active: true, icon: 'icon-chat'},
+    { title: 'Tab 3', active: false, icon: 'icon-settings' },
+    { title: 'Tab 4', active: false, icon: 'icon-help' },
+  ];
 </script>
 
 <Panel title="Tabs component">
@@ -17,12 +24,8 @@
   </p>
 </Panel>
 
-<br />
-<Panel title="Simple Tabs" shadow={true}>
-
-  <br>
+<Panel title="Basic tabs" shadow={true}>
   <Tabs {items} />
-
   <Code>
     {@html highlight(
       '<script> \n' +
@@ -35,19 +38,20 @@
       '</script> \n\n' +
       '<Tabs {items} />')}
   </Code>
-  
-  <!-- <br>
-  <strong>Code example:</strong>
-  <div class="w-code">
+</Panel>
+
+<Panel title="Tabs with icons" shadow={true}>
+  <Tabs items={items1} />
+  <Code>
     {@html highlight(
       '<script> \n' +
       '   const items = [ \n' + 
-      '     { title: "Tab 1", active: true }, \n' +
-      '     { title: "Tab 2", active: false }, \n' +
-      '     { title: "Tab 3", active: false }, \n' +
-      '     { title: "Tab 4", active: false }, \n' +
+      '     { title: "Tab 1", active: false, icon: "icon-bell" }, \n' +
+      '     { title: "Tab 2", active: true, icon: "icon-chat" }, \n' +
+      '     { title: "Tab 3", active: false, icon: "icon-settings" }, \n' +
+      '     { title: "Tab 4", active: false, icon: "icon-help" }, \n' +
       '   ]; \n' +
       '</script> \n\n' +
       '<Tabs {items} />')}
-  </div> -->
+  </Code>
 </Panel>

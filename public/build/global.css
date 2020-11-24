@@ -558,15 +558,42 @@ h3 {
   color: #b1b1b1;
   background-color: whitesmoke;
   padding-bottom: 10px;
+  display: inline;
+}
+.w-tabs .w-tab {
+  display: inline;
+  cursor: pointer;
+}
+.w-tabs-shadow {
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  -moz-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.w-tabs .w-tab:hover {
+  color: #212121;
+}
+.w-tabs .w-tab:hover .w-tabs-icon {
+  background-color: #616161;
+}
+.w-tabs-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover;
+  margin-right: 0px;
+  background-color: #b1b1b1;
+  position: relative;
+  top: 4px;
+  left: 20px;
 }
 .w-tabs-title {
   cursor: pointer;
   display: table-cell;
-  padding: 0px 15px 5px 15px;
+  padding: 0px 10px 10px 15px;
   border-bottom: 1px solid #b1b1b1;
 }
-.w-tabs-title:hover {
-  color: #212121;
+.w-tabs-icon.active {
+  background-color: #616161;
 }
 .w-tabs .active {
   color: #515151;

@@ -2943,34 +2943,31 @@ var components = (function () {
     	const child_ctx = ctx.slice();
     	child_ctx[4] = list[i].title;
     	child_ctx[5] = list[i].active;
+    	child_ctx[6] = list[i].icon;
     	return child_ctx;
     }
 
-    // (7:2) {#each items as { title, active }}
-    function create_each_block(ctx) {
+    // (9:6) {#if icon}
+    function create_if_block$2(ctx) {
     	let span;
-    	let t0_value = /*title*/ ctx[4] + "";
-    	let t0;
-    	let t1;
+    	let span_class_value;
 
     	const block = {
     		c: function create() {
     			span = element("span");
-    			t0 = text(t0_value);
-    			t1 = space();
-    			attr_dev(span, "class", "w-tabs-title");
+    			attr_dev(span, "class", span_class_value = "w-tabs-icon " + /*icon*/ ctx[6]);
     			toggle_class(span, "active", /*active*/ ctx[5]);
-    			add_location(span, file$5, 7, 4, 169);
+    			add_location(span, file$5, 8, 16, 211);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
-    			append_dev(span, t0);
-    			append_dev(span, t1);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*items*/ 1 && t0_value !== (t0_value = /*title*/ ctx[4] + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*items*/ 1 && span_class_value !== (span_class_value = "w-tabs-icon " + /*icon*/ ctx[6])) {
+    				attr_dev(span, "class", span_class_value);
+    			}
 
-    			if (dirty & /*items*/ 1) {
+    			if (dirty & /*items, items*/ 1) {
     				toggle_class(span, "active", /*active*/ ctx[5]);
     			}
     		},
@@ -2981,9 +2978,84 @@ var components = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
+    		id: create_if_block$2.name,
+    		type: "if",
+    		source: "(9:6) {#if icon}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (7:2) {#each items as { title, active, icon }}
+    function create_each_block(ctx) {
+    	let div;
+    	let t0;
+    	let span;
+    	let t1_value = /*title*/ ctx[4] + "";
+    	let t1;
+    	let span_style_value;
+    	let t2;
+    	let if_block = /*icon*/ ctx[6] && create_if_block$2(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			if (if_block) if_block.c();
+    			t0 = space();
+    			span = element("span");
+    			t1 = text(t1_value);
+    			t2 = space();
+    			attr_dev(span, "class", "w-tabs-title");
+    			attr_dev(span, "style", span_style_value = /*icon*/ ctx[6] ? "padding-left: 25px" : "");
+    			toggle_class(span, "active", /*active*/ ctx[5]);
+    			add_location(span, file$5, 9, 6, 274);
+    			attr_dev(div, "class", "w-tab");
+    			add_location(div, file$5, 7, 4, 175);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			if (if_block) if_block.m(div, null);
+    			append_dev(div, t0);
+    			append_dev(div, span);
+    			append_dev(span, t1);
+    			append_dev(div, t2);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (/*icon*/ ctx[6]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block$2(ctx);
+    					if_block.c();
+    					if_block.m(div, t0);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			if (dirty & /*items*/ 1 && t1_value !== (t1_value = /*title*/ ctx[4] + "")) set_data_dev(t1, t1_value);
+
+    			if (dirty & /*items*/ 1 && span_style_value !== (span_style_value = /*icon*/ ctx[6] ? "padding-left: 25px" : "")) {
+    				attr_dev(span, "style", span_style_value);
+    			}
+
+    			if (dirty & /*items*/ 1) {
+    				toggle_class(span, "active", /*active*/ ctx[5]);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			if (if_block) if_block.d();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(7:2) {#each items as { title, active }}",
+    		source: "(7:2) {#each items as { title, active, icon }}",
     		ctx
     	});
 
@@ -3019,7 +3091,7 @@ var components = (function () {
     			if (default_slot) default_slot.c();
     			attr_dev(div0, "class", /*elClasses*/ ctx[1]);
     			add_location(div0, file$5, 5, 0, 104);
-    			add_location(div1, file$5, 13, 0, 293);
+    			add_location(div1, file$5, 18, 0, 438);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3192,7 +3264,7 @@ var components = (function () {
     }
 
     // (16:2) {#if valid === false}
-    function create_if_block$2(ctx) {
+    function create_if_block$3(ctx) {
     	let span;
 
     	const block = {
@@ -3211,7 +3283,7 @@ var components = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$2.name,
+    		id: create_if_block$3.name,
     		type: "if",
     		source: "(16:2) {#if valid === false}",
     		ctx
@@ -3229,7 +3301,7 @@ var components = (function () {
     	let t2;
     	let t3;
     	let if_block0 = /*valid*/ ctx[4] && create_if_block_1$2(ctx);
-    	let if_block1 = /*valid*/ ctx[4] === false && create_if_block$2(ctx);
+    	let if_block1 = /*valid*/ ctx[4] === false && create_if_block$3(ctx);
 
     	const block = {
     		c: function create() {
@@ -3299,7 +3371,7 @@ var components = (function () {
 
     			if (/*valid*/ ctx[4] === false) {
     				if (if_block1) ; else {
-    					if_block1 = create_if_block$2(ctx);
+    					if_block1 = create_if_block$3(ctx);
     					if_block1.c();
     					if_block1.m(div1, null);
     				}
@@ -5881,15 +5953,15 @@ var components = (function () {
     /* src/pages/Tabs.svelte generated by Svelte v3.29.7 */
     const file$d = "src/pages/Tabs.svelte";
 
-    // (12:0) <Panel title="Tabs component">
-    function create_default_slot_2$4(ctx) {
+    // (18:0) <Panel title="Tabs component">
+    function create_default_slot_4$2(ctx) {
     	let p;
 
     	const block = {
     		c: function create() {
     			p = element("p");
     			p.textContent = "Tabs component is implemnted as a container for one or more tabs.";
-    			add_location(p, file$d, 12, 2, 368);
+    			add_location(p, file$d, 18, 2, 623);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -5901,17 +5973,17 @@ var components = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$4.name,
+    		id: create_default_slot_4$2.name,
     		type: "slot",
-    		source: "(12:0) <Panel title=\\\"Tabs component\\\">",
+    		source: "(18:0) <Panel title=\\\"Tabs component\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (24:2) <Code>
-    function create_default_slot_1$6(ctx) {
+    // (26:2) <Code>
+    function create_default_slot_3$4(ctx) {
     	let html_tag;
     	let raw_value = highlight("<script> \n" + "   const items = [ \n" + "     { title: \"Tab 1\", active: true }, \n" + "     { title: \"Tab 2\", active: false }, \n" + "     { title: \"Tab 3\", active: false }, \n" + "     { title: \"Tab 4\", active: false }, \n" + "   ]; \n" + "</script> \n\n" + "<Tabs {items} />") + "";
     	let html_anchor;
@@ -5934,21 +6006,19 @@ var components = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1$6.name,
+    		id: create_default_slot_3$4.name,
     		type: "slot",
-    		source: "(24:2) <Code>",
+    		source: "(26:2) <Code>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (19:0) <Panel title="Simple Tabs" shadow={true}>
-    function create_default_slot$6(ctx) {
-    	let br;
-    	let t0;
+    // (24:0) <Panel title="Basic tabs" shadow={true}>
+    function create_default_slot_2$4(ctx) {
     	let tabs;
-    	let t1;
+    	let t;
     	let code;
     	let current;
 
@@ -5959,7 +6029,7 @@ var components = (function () {
 
     	code = new Code({
     			props: {
-    				$$slots: { default: [create_default_slot_1$6] },
+    				$$slots: { default: [create_default_slot_3$4] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -5967,25 +6037,20 @@ var components = (function () {
 
     	const block = {
     		c: function create() {
-    			br = element("br");
-    			t0 = space();
     			create_component(tabs.$$.fragment);
-    			t1 = space();
+    			t = space();
     			create_component(code.$$.fragment);
-    			add_location(br, file$d, 20, 2, 511);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, br, anchor);
-    			insert_dev(target, t0, anchor);
     			mount_component(tabs, target, anchor);
-    			insert_dev(target, t1, anchor);
+    			insert_dev(target, t, anchor);
     			mount_component(code, target, anchor);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
     			const code_changes = {};
 
-    			if (dirty & /*$$scope*/ 2) {
+    			if (dirty & /*$$scope*/ 4) {
     				code_changes.$$scope = { dirty, ctx };
     			}
 
@@ -6003,10 +6068,111 @@ var components = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(br);
-    			if (detaching) detach_dev(t0);
     			destroy_component(tabs, detaching);
-    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(t);
+    			destroy_component(code, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_2$4.name,
+    		type: "slot",
+    		source: "(24:0) <Panel title=\\\"Basic tabs\\\" shadow={true}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (42:2) <Code>
+    function create_default_slot_1$6(ctx) {
+    	let html_tag;
+    	let raw_value = highlight("<script> \n" + "   const items = [ \n" + "     { title: \"Tab 1\", active: false, icon: \"icon-bell\" }, \n" + "     { title: \"Tab 2\", active: true, icon: \"icon-chat\" }, \n" + "     { title: \"Tab 3\", active: false, icon: \"icon-settings\" }, \n" + "     { title: \"Tab 4\", active: false, icon: \"icon-help\" }, \n" + "   ]; \n" + "</script> \n\n" + "<Tabs {items} />") + "";
+    	let html_anchor;
+
+    	const block = {
+    		c: function create() {
+    			html_anchor = empty();
+    			html_tag = new HtmlTag(html_anchor);
+    		},
+    		m: function mount(target, anchor) {
+    			html_tag.m(raw_value, target, anchor);
+    			insert_dev(target, html_anchor, anchor);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(html_anchor);
+    			if (detaching) html_tag.d();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_1$6.name,
+    		type: "slot",
+    		source: "(42:2) <Code>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (40:0) <Panel title="Tabs with icons" shadow={true}>
+    function create_default_slot$6(ctx) {
+    	let tabs;
+    	let t;
+    	let code;
+    	let current;
+
+    	tabs = new Tabs({
+    			props: { items: /*items1*/ ctx[1] },
+    			$$inline: true
+    		});
+
+    	code = new Code({
+    			props: {
+    				$$slots: { default: [create_default_slot_1$6] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(tabs.$$.fragment);
+    			t = space();
+    			create_component(code.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(tabs, target, anchor);
+    			insert_dev(target, t, anchor);
+    			mount_component(code, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const code_changes = {};
+
+    			if (dirty & /*$$scope*/ 4) {
+    				code_changes.$$scope = { dirty, ctx };
+    			}
+
+    			code.$set(code_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(tabs.$$.fragment, local);
+    			transition_in(code.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(tabs.$$.fragment, local);
+    			transition_out(code.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(tabs, detaching);
+    			if (detaching) detach_dev(t);
     			destroy_component(code, detaching);
     		}
     	};
@@ -6015,7 +6181,7 @@ var components = (function () {
     		block,
     		id: create_default_slot$6.name,
     		type: "slot",
-    		source: "(19:0) <Panel title=\\\"Simple Tabs\\\" shadow={true}>",
+    		source: "(40:0) <Panel title=\\\"Tabs with icons\\\" shadow={true}>",
     		ctx
     	});
 
@@ -6025,15 +6191,15 @@ var components = (function () {
     function create_fragment$e(ctx) {
     	let panel0;
     	let t0;
-    	let br;
-    	let t1;
     	let panel1;
+    	let t1;
+    	let panel2;
     	let current;
 
     	panel0 = new Panel({
     			props: {
     				title: "Tabs component",
-    				$$slots: { default: [create_default_slot_2$4] },
+    				$$slots: { default: [create_default_slot_4$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -6041,7 +6207,17 @@ var components = (function () {
 
     	panel1 = new Panel({
     			props: {
-    				title: "Simple Tabs",
+    				title: "Basic tabs",
+    				shadow: true,
+    				$$slots: { default: [create_default_slot_2$4] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	panel2 = new Panel({
+    			props: {
+    				title: "Tabs with icons",
     				shadow: true,
     				$$slots: { default: [create_default_slot$6] },
     				$$scope: { ctx }
@@ -6053,10 +6229,9 @@ var components = (function () {
     		c: function create() {
     			create_component(panel0.$$.fragment);
     			t0 = space();
-    			br = element("br");
-    			t1 = space();
     			create_component(panel1.$$.fragment);
-    			add_location(br, file$d, 17, 0, 459);
+    			t1 = space();
+    			create_component(panel2.$$.fragment);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6064,44 +6239,53 @@ var components = (function () {
     		m: function mount(target, anchor) {
     			mount_component(panel0, target, anchor);
     			insert_dev(target, t0, anchor);
-    			insert_dev(target, br, anchor);
-    			insert_dev(target, t1, anchor);
     			mount_component(panel1, target, anchor);
+    			insert_dev(target, t1, anchor);
+    			mount_component(panel2, target, anchor);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
     			const panel0_changes = {};
 
-    			if (dirty & /*$$scope*/ 2) {
+    			if (dirty & /*$$scope*/ 4) {
     				panel0_changes.$$scope = { dirty, ctx };
     			}
 
     			panel0.$set(panel0_changes);
     			const panel1_changes = {};
 
-    			if (dirty & /*$$scope*/ 2) {
+    			if (dirty & /*$$scope*/ 4) {
     				panel1_changes.$$scope = { dirty, ctx };
     			}
 
     			panel1.$set(panel1_changes);
+    			const panel2_changes = {};
+
+    			if (dirty & /*$$scope*/ 4) {
+    				panel2_changes.$$scope = { dirty, ctx };
+    			}
+
+    			panel2.$set(panel2_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
     			transition_in(panel0.$$.fragment, local);
     			transition_in(panel1.$$.fragment, local);
+    			transition_in(panel2.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(panel0.$$.fragment, local);
     			transition_out(panel1.$$.fragment, local);
+    			transition_out(panel2.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
     			destroy_component(panel0, detaching);
     			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(br);
-    			if (detaching) detach_dev(t1);
     			destroy_component(panel1, detaching);
+    			if (detaching) detach_dev(t1);
+    			destroy_component(panel2, detaching);
     		}
     	};
 
@@ -6127,14 +6311,45 @@ var components = (function () {
     		{ title: "Tab 4", active: false }
     	];
 
+    	const items1 = [
+    		{
+    			title: "Tab 1",
+    			active: false,
+    			icon: "icon-bell"
+    		},
+    		{
+    			title: "Tab 2",
+    			active: true,
+    			icon: "icon-chat"
+    		},
+    		{
+    			title: "Tab 3",
+    			active: false,
+    			icon: "icon-settings"
+    		},
+    		{
+    			title: "Tab 4",
+    			active: false,
+    			icon: "icon-help"
+    		}
+    	];
+
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Tabs> was created with unknown prop '${key}'`);
     	});
 
-    	$$self.$capture_state = () => ({ highlight, Panel, Tabs, Code, items });
-    	return [items];
+    	$$self.$capture_state = () => ({
+    		highlight,
+    		Panel,
+    		Tabs,
+    		Code,
+    		items,
+    		items1
+    	});
+
+    	return [items, items1];
     }
 
     class Tabs_1 extends SvelteComponentDev {
@@ -6299,7 +6514,7 @@ var components = (function () {
     }
 
     // (16:0) <Panel title="Disabled Text Field" shadow={true}>
-    function create_default_slot_4$2(ctx) {
+    function create_default_slot_4$3(ctx) {
     	let textfield;
     	let t;
     	let code;
@@ -6363,7 +6578,7 @@ var components = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4$2.name,
+    		id: create_default_slot_4$3.name,
     		type: "slot",
     		source: "(16:0) <Panel title=\\\"Disabled Text Field\\\" shadow={true}>",
     		ctx
@@ -6373,7 +6588,7 @@ var components = (function () {
     }
 
     // (34:2) <Code>
-    function create_default_slot_3$4(ctx) {
+    function create_default_slot_3$5(ctx) {
     	let html_tag;
     	let raw_value = highlight("<TextField label=\"Phone\" value=\"178 35 456666\" valid={true}/>\n" + "<TextField label=\"Phone disabled\" value=\"178 35 4566366\" valid={true} disabled={true} />") + "";
     	let html_anchor;
@@ -6396,7 +6611,7 @@ var components = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$4.name,
+    		id: create_default_slot_3$5.name,
     		type: "slot",
     		source: "(34:2) <Code>",
     		ctx
@@ -6436,7 +6651,7 @@ var components = (function () {
 
     	code = new Code({
     			props: {
-    				$$slots: { default: [create_default_slot_3$4] },
+    				$$slots: { default: [create_default_slot_3$5] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -6660,7 +6875,7 @@ var components = (function () {
     			props: {
     				title: "Disabled Text Field",
     				shadow: true,
-    				$$slots: { default: [create_default_slot_4$2] },
+    				$$slots: { default: [create_default_slot_4$3] },
     				$$scope: { ctx }
     			},
     			$$inline: true
