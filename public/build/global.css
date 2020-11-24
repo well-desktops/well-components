@@ -569,11 +569,6 @@ h3 {
   margin-right: 10px;
   border-bottom: 1px solid #b1b1b1;
 }
-.w-tabs-shadow {
-  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  -moz-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
 .w-tabs .w-tab:hover {
   color: #212121;
 }
@@ -599,7 +594,6 @@ h3 {
 }
 .w-tabs .active {
   color: #515151;
-  padding: 0 10px 9px 10px;
   border-bottom: 2px solid #515151;
 }
 

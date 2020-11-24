@@ -15,12 +15,6 @@
     border-bottom: 1px solid $primary-color-disabled;
   }
 
-  &-shadow {
-    -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    -moz-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  }
-
   .w-tab:hover {
     color: $primary-color-hover;
     .w-tabs-icon {
@@ -55,7 +49,6 @@
 
   .active {
     color: $primary-color;
-    padding: 0 10px 9px 10px;
     border-bottom: 2px solid $primary-color;
   }
 
