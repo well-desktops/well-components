@@ -2,7 +2,7 @@
   import page from "page";
   import { router } from "./stores/index";
   import pages from './pages';
-  import Sidebar from "./components/sidebar/index.svelte";
+  import SideNavigation from "./components/sidenavigation/index.svelte";
 
   const title="Well Components";
   const routes = [
@@ -14,6 +14,7 @@
     { path: '/grid', title: 'Grid', component: pages.Grids },
     { path: '/panel', title: 'Panel', component: pages.Panels },
     { path: '/search', title: 'Search', component: pages.Searches },
+    { path: '/sidenavigation', title: 'Side Navigation', component: pages.SideNavigations },
     { path: '/switch', title: 'Switch', component: pages.Switches },
     { path: '/tabs', title: 'Tabs', component: pages.Tabs },
     { path: '/textfield', title: 'Text Field', component: pages.TextFields },
@@ -37,7 +38,8 @@
 
 <div class="w-container">
   <aside>
-    <Sidebar {title} {routes} />
+    <div class="w-logo">{title}</div>
+    <SideNavigation currentRoute={$router} {routes} />
   </aside>
   <main>
     <svelte:component this={component} />
