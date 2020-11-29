@@ -5,6 +5,7 @@
  * - https://github.com/rollup/rollup-plugin-svelte#pkgsvelte
  * @see {@link ../package.json}
  */
+import Asset  from './components/asset/index.svelte';
 import Button  from './components/button/index.svelte';
 import Panel from './components/panel/index.svelte';
 import Divider from './components/divider/index.svelte';
@@ -15,6 +16,7 @@ import Tabs from './components/tabs/index.svelte';
 import TextField from './components/textfield/index.svelte';
 
 export { 
+  Asset,
   Button,
   Panel,
   Divider,

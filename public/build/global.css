@@ -185,6 +185,14 @@
   mask-repeat: no-repeat;
 }
 
+.icon-file-code {
+  mask: url(../icons/FileCode.svg);
+  -webkit-mask-image: url(../icons/FileCode.svg);
+  -webkit-mask-size: 100%;
+  mask-size: 100%;
+  mask-repeat: no-repeat;
+}
+
 *,
 *:before,
 *:after {
@@ -227,6 +235,23 @@ h3 {
   font-family: "Righteous";
   font-size: 12px;
   color: #616161;
+}
+
+.w-asset {
+  width: 100%;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #515151;
+  background-color: whitesmoke;
+}
+.w-asset .w-asset-file {
+  fill: none;
+  stroke: #616161;
+  stroke-width: 2px;
+}
+.w-asset .w-asset-folder {
+  fill: none;
+  stroke: #616161;
 }
 
 .w-button {
@@ -376,6 +401,15 @@ h3 {
 }
 .w-grid-container-3-14 {
   grid-template-columns: 14em 14em 14em;
+}
+.w-grid-container-3-16 {
+  grid-template-columns: 16em 16em 16em;
+}
+.w-grid-container-3-18 {
+  grid-template-columns: 18em 18em 18em;
+}
+.w-grid-container-3-20 {
+  grid-template-columns: 20em 20em 20em;
 }
 
 .w-panel {

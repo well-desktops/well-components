@@ -1,4 +1,6 @@
 
+import Assets from "./Assets.svelte";
+import AssetsList from "./AssetsList.svelte";
 import Buttons from "./Buttons.svelte";
 import Dividers from "./Dividers.svelte";
 import GetStarted from "./GetStarted.svelte";
@@ -11,6 +13,8 @@ import Tabs from "./Tabs.svelte";
 import TextFields from "./TextFields.svelte";
 
 export default {
+  Assets,
+  AssetsList,
   Buttons,
   Dividers,
   GetStarted,

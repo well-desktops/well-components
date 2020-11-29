@@ -156,3 +156,11 @@
   mask-repeat: no-repeat;
 }
 
+.icon-file-code {
+  mask: url(../icons/FileCode.svg);
+  -webkit-mask-image: url(../icons/FileCode.svg);
+  -webkit-mask-size: 100%;
+  mask-size: 100%;
+  mask-repeat: no-repeat;
+}
+

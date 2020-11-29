@@ -1,0 +1,24 @@
+@use '../colors';
+
+.w-asset {
+  width: 100%;
+  border-radius: 4px;
+  font-size: 14px;
+  color: $primary-color;
+  background-color: $background-color;
+
+  .w-asset-file {
+    fill: none;
+    // fill: $primary-color-elements;
+    stroke: $primary-color-strong;
+    stroke-width: 2px;
+  }
+
+  .w-asset-folder {
+    fill: none;
+    // fill: $primary-color-elements;
+    stroke: $primary-color-strong;
+    // stroke-width: 1px;
+  }
+
+}

@@ -9,6 +9,8 @@
     { path: '/', title: 'Get Started', component: pages.GetStarted, topic: true },
     { path: 'https://github.com/well-desktops/well-components', title: 'GetHub', topic: true },
     { path: '#', title: 'Components', topic: true },
+    { path: '/assets', title: 'Asset', component: pages.Assets },
+    { path: '/assetslist', title: 'Asset List', component: pages.AssetsList },
     { path: '/button', title: 'Button', component: pages.Buttons },
     { path: '/divider', title: 'Divider', component: pages.Dividers },
     { path: '/grid', title: 'Grid', component: pages.Grids },
