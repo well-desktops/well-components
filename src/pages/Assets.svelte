@@ -2,15 +2,27 @@
   import { highlight } from "../utility";
   import { Asset, Panel } from '../index';
   import Code from '../components/code/index.svelte';
-
 </script>
 
 <div class="w-title">Asset</div>
 
 <Panel shadow={true}>
   <p>
-    Assests component helps to provide data as images or icons as picture. Besides, it could used as file or folder object.
+    Asset component helps to provide data as images or icon. Besides, it could be used as file or folder object:
   </p>
+
+  <ul>
+    <li>
+      Use for displaying custom image/icon.
+    </li>
+    <li>
+      Use for displaying predefined file icon.
+    </li>
+    <li>
+      Use for displaying predefined folder icon.
+    </li>
+  </ul>
+
 </Panel>
 
 <Panel title="Image" shadow={true}>

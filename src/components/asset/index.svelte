@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let image = "";
+  export let image: string;
   export let size: number;
   export let type: string;
   $: elStyles =

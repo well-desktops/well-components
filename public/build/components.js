@@ -1819,7 +1819,7 @@ var components = (function () {
     			if (img.src !== (img_src_value = /*image*/ ctx[0])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "style", /*elStyles*/ ctx[2]);
     			attr_dev(img, "alt", "Asset images");
-    			add_location(img, file, 30, 4, 1422);
+    			add_location(img, file, 30, 4, 1417);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, img, anchor);
@@ -1859,13 +1859,13 @@ var components = (function () {
     			svg = svg_element("svg");
     			path = svg_element("path");
     			attr_dev(path, "d", "M41.25,10.78467H22.44336L18.36914,5.94092a1.00127,1.00127,0,0,0-.76562-.35645H3.15918a.99974.99974,0,0,0-1,1V37.82471A4.5962,4.5962,0,0,0,6.75,42.41553h34.5a4.5962,4.5962,0,0,0,4.59082-4.59082V15.375A4.59578,4.59578,0,0,0,41.25,10.78467ZM4.15918,7.58447H17.1377l2.69238,3.2002H4.15918ZM43.84082,37.82471A2.59359,2.59359,0,0,1,41.25,40.41553H6.75a2.59359,2.59359,0,0,1-2.59082-2.59082v-25.04H41.25A2.59349,2.59349,0,0,1,43.84082,15.375Z");
-    			add_location(path, file, 26, 8, 938);
+    			add_location(path, file, 26, 8, 933);
     			attr_dev(svg, "viewBox", "0 0 48 60");
     			attr_dev(svg, "x", "0px");
     			attr_dev(svg, "y", "0px");
     			attr_dev(svg, "class", "w-asset-folder");
     			attr_dev(svg, "style", /*elStyles*/ ctx[2]);
-    			add_location(svg, file, 22, 4, 830);
+    			add_location(svg, file, 22, 4, 825);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, svg, anchor);
@@ -1904,14 +1904,14 @@ var components = (function () {
     			g = svg_element("g");
     			path = svg_element("path");
     			attr_dev(path, "d", "M39.8,6.5c-1-1-2.4-1.5-3.8-1.5H21c-5.2,0-9.5,4.3-9.5,9.5v37c0,5.2,4.3,9.5,9.5,9.5h24c5.2,0,9.5-4.3,9.5-9.5V22.7   c0-1.5-0.6-3-1.7-4L39.8,6.5z M49.2,19.5h-7.6c-1.4,0-2.5-1.1-2.5-2.5v-7L49.2,19.5z M51.5,51.5c0,3.6-2.9,6.5-6.5,6.5H21   c-3.6,0-6.5-2.9-6.5-6.5v-37c0-3.6,2.9-6.5,6.5-6.5h15c0,0,0.1,0,0.1,0v9c0,3,2.5,5.5,5.5,5.5h9.9c0,0.1,0,0.1,0,0.2V51.5z");
-    			add_location(path, file, 17, 8, 397);
-    			add_location(g, file, 16, 6, 385);
+    			add_location(path, file, 17, 8, 392);
+    			add_location(g, file, 16, 6, 380);
     			attr_dev(svg, "x", "0px");
     			attr_dev(svg, "y", "0px");
     			attr_dev(svg, "viewBox", "0 0 66 82.5");
     			attr_dev(svg, "class", "w-asset-file");
     			attr_dev(svg, "style", /*elStyles*/ ctx[2]);
-    			add_location(svg, file, 10, 4, 267);
+    			add_location(svg, file, 10, 4, 262);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, svg, anchor);
@@ -1956,7 +1956,7 @@ var components = (function () {
     			div = element("div");
     			if_block.c();
     			attr_dev(div, "class", "w-asset");
-    			add_location(div, file, 8, 0, 217);
+    			add_location(div, file, 8, 0, 212);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2000,7 +2000,7 @@ var components = (function () {
     function instance($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Asset", slots, []);
-    	let { image = "" } = $$props;
+    	let { image } = $$props;
     	let { size } = $$props;
     	let { type } = $$props;
     	const writable_props = ["image", "size", "type"];
@@ -2053,6 +2053,10 @@ var components = (function () {
 
     		const { ctx } = this.$$;
     		const props = options.props || {};
+
+    		if (/*image*/ ctx[0] === undefined && !("image" in props)) {
+    			console.warn("<Asset> was created without expected prop 'image'");
+    		}
 
     		if (/*size*/ ctx[3] === undefined && !("size" in props)) {
     			console.warn("<Asset> was created without expected prop 'size'");
@@ -4206,18 +4210,48 @@ var components = (function () {
     // (8:0) <Panel shadow={true}>
     function create_default_slot_6(ctx) {
     	let p;
+    	let t1;
+    	let ul;
+    	let li0;
+    	let t3;
+    	let li1;
+    	let t5;
+    	let li2;
 
     	const block = {
     		c: function create() {
     			p = element("p");
-    			p.textContent = "Assests component helps to provide data as images or icons as picture. Besides, it could used as file or folder object.";
+    			p.textContent = "Asset component helps to provide data as images or icon. Besides, it could be used as file or folder object:";
+    			t1 = space();
+    			ul = element("ul");
+    			li0 = element("li");
+    			li0.textContent = "Use for displaying custom image/icon.";
+    			t3 = space();
+    			li1 = element("li");
+    			li1.textContent = "Use for displaying predefined file icon.";
+    			t5 = space();
+    			li2 = element("li");
+    			li2.textContent = "Use for displaying predefined folder icon.";
     			add_location(p, file$a, 8, 2, 220);
+    			add_location(li0, file$a, 13, 4, 356);
+    			add_location(li1, file$a, 16, 4, 419);
+    			add_location(li2, file$a, 19, 4, 485);
+    			add_location(ul, file$a, 12, 2, 347);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, ul, anchor);
+    			append_dev(ul, li0);
+    			append_dev(ul, t3);
+    			append_dev(ul, li1);
+    			append_dev(ul, t5);
+    			append_dev(ul, li2);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(p);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(ul);
     		}
     	};
 
@@ -4232,7 +4266,7 @@ var components = (function () {
     	return block;
     }
 
-    // (17:2) <Code>
+    // (30:2) <Code>
     function create_default_slot_5(ctx) {
     	let html_tag;
     	let raw_value = highlight("<Asset image=\"images/example-ava.jpg\" size={50} />") + "";
@@ -4258,14 +4292,14 @@ var components = (function () {
     		block,
     		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(17:2) <Code>",
+    		source: "(30:2) <Code>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (14:0) <Panel title="Image" shadow={true}>
+    // (27:0) <Panel title="Image" shadow={true}>
     function create_default_slot_4(ctx) {
     	let asset;
     	let t;
@@ -4331,14 +4365,14 @@ var components = (function () {
     		block,
     		id: create_default_slot_4.name,
     		type: "slot",
-    		source: "(14:0) <Panel title=\\\"Image\\\" shadow={true}>",
+    		source: "(27:0) <Panel title=\\\"Image\\\" shadow={true}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (24:2) <Code>
+    // (37:2) <Code>
     function create_default_slot_3(ctx) {
     	let html_tag;
     	let raw_value = highlight("<Asset type=\"file\" size={25} />") + "";
@@ -4364,14 +4398,14 @@ var components = (function () {
     		block,
     		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(24:2) <Code>",
+    		source: "(37:2) <Code>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (22:0) <Panel title="File" shadow={true}>
+    // (35:0) <Panel title="File" shadow={true}>
     function create_default_slot_2(ctx) {
     	let asset;
     	let t;
@@ -4434,14 +4468,14 @@ var components = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(22:0) <Panel title=\\\"File\\\" shadow={true}>",
+    		source: "(35:0) <Panel title=\\\"File\\\" shadow={true}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (31:2) <Code>
+    // (44:2) <Code>
     function create_default_slot_1(ctx) {
     	let html_tag;
     	let raw_value = highlight("<Asset type=\"folder\" size={25} />") + "";
@@ -4467,14 +4501,14 @@ var components = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(31:2) <Code>",
+    		source: "(44:2) <Code>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (29:0) <Panel title="Folder" shadow={true}>
+    // (42:0) <Panel title="Folder" shadow={true}>
     function create_default_slot(ctx) {
     	let asset;
     	let t;
@@ -4537,7 +4571,7 @@ var components = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(29:0) <Panel title=\\\"Folder\\\" shadow={true}>",
+    		source: "(42:0) <Panel title=\\\"Folder\\\" shadow={true}>",
     		ctx
     	});
 
