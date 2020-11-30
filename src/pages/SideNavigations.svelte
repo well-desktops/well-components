@@ -4,18 +4,18 @@
   import Code from '../components/code/index.svelte';
 
   const routes1 = [
-    { path: '#', title: 'Section 1', component: null },
-    { path: '#', title: 'Section 2', component: null },
-    { path: '#', title: 'Section 3', component: null },
-    { path: '#', title: 'Section 4', component: null },
+    { path: '#1', title: 'Section 1', component: null },
+    { path: '#2', title: 'Section 2', component: null },
+    { path: '#3', title: 'Section 3', component: null },
+    { path: '#4', title: 'Section 4', component: null },
   ];
   const routes2 = [
-    { path: '#', title: 'Section Title 1', component: null, topic: true },
-    { path: '#', title: 'Section Title 2', component: null, topic: true },
-    { path: '#', title: 'Section 1', component: null },
-    { path: '#', title: 'Section 2', component: null },
-    { path: '#', title: 'Section 3', component: null },
-    { path: '#', title: 'Section 4', component: null },
+    { path: '#1', title: 'Section Title 1', component: null, topic: true },
+    { path: '#2', title: 'Section Title 2', component: null, topic: true },
+    { path: '#3', title: 'Section 1', component: null },
+    { path: '#4', title: 'Section 2', component: null },
+    { path: '#5', title: 'Section 3', component: null },
+    { path: '#6', title: 'Section 4', component: null },
   ];
   let currentRoute;
 
@@ -28,7 +28,7 @@
 </Panel>
 
 <Panel title="Standard usage" shadow={true}>
-  <SideNavigation routes={routes1} {currentRoute}/>
+  <SideNavigation routes={routes1} currentRoute="#1" />
 
   <br>
   <Code>
@@ -47,7 +47,7 @@
 </Panel>
 
 <Panel title="Multilevel usage" shadow={true}>
-  <SideNavigation routes={routes2} {currentRoute}/>
+  <SideNavigation routes={routes2} currentRoute="#4"/>
 
   <br>
   <Code>

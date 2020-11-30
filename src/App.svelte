@@ -12,6 +12,7 @@
     { path: '/assets', title: 'Asset', component: pages.Assets },
     { path: '/assetslist', title: 'Asset List', component: pages.AssetsList },
     { path: '/button', title: 'Button', component: pages.Buttons },
+    { path: '/checkbox', title: 'Checkbox', component: pages.Checkboxes },
     { path: '/divider', title: 'Divider', component: pages.Dividers },
     { path: '/grid', title: 'Grid', component: pages.Grids },
     { path: '/panel', title: 'Panel', component: pages.Panels },

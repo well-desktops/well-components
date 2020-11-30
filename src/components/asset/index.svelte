@@ -2,17 +2,18 @@
   export let image: string;
   export let size: number;
   export let type: string;
+  // export let title: string;
   $: elStyles =
-    "max-width: 75%; max-height: 75%; object-fit: contain;" +
-    (size ? `width: ${size}px;` : "width: 50px;");
+    // "max-width: 75%; max-height: 75%; object-fit: contain;" +
+    (size ? `width: ${size}px; height: ${size}px;` : "width: 50px;");
 </script>
 
-<div class="w-asset">
+<div class="w-asset" style={elStyles}>
   {#if type === 'file'}
     <svg
       x="0px"
       y="0px"
-      viewBox="0 0 66 82.5"
+      viewBox="2 2 66 66"
       class="w-asset-file"
       style={elStyles}>
       <g>
@@ -22,7 +23,7 @@
     </svg>
   {:else if type === 'folder'}
     <svg
-      viewBox="0 0 48 60"
+      viewBox="0 0 48 48"
       x="0px"
       y="0px" class="w-asset-folder" style={elStyles}>
         <path
@@ -35,4 +36,10 @@
       style={elStyles}
       alt="Asset images" />
   {/if}
-</div>
+
+  <!-- {#if title}
+    <span class="w-asset-title">
+      {title}
+    </span>
+  {/if} -->
+  </div>

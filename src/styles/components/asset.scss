@@ -1,11 +1,14 @@
 @use '../colors';
 
 .w-asset {
-  width: 100%;
-  border-radius: 4px;
+  // width: 100%;
+  // border-radius: 4px;
   font-size: 14px;
+  // height: 30px;
   color: $primary-color;
   background-color: $background-color;
+  // border: 1px solid #333;
+  // margin: 5px;
 
   .w-asset-file {
     fill: none;

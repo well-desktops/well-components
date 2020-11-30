@@ -238,8 +238,6 @@ h3 {
 }
 
 .w-asset {
-  width: 100%;
-  border-radius: 4px;
   font-size: 14px;
   color: #515151;
   background-color: whitesmoke;
@@ -252,6 +250,23 @@ h3 {
 .w-asset .w-asset-folder {
   fill: none;
   stroke: #616161;
+}
+
+.w-assetlist {
+  color: #515151;
+  background-color: whitesmoke;
+  width: 220px;
+}
+.w-assetlist-grid {
+  cursor: pointer;
+  display: grid;
+  border-radius: 4px;
+  grid-template-columns: 2em 2.5em 10em;
+  padding: 5px;
+}
+.w-assetlist-grid:hover {
+  color: #212121;
+  background-color: #eeeeee;
 }
 
 .w-button {
@@ -296,6 +311,52 @@ h3 {
 }
 .w-button-disabled .w-button-icon, .w-button-disabled:hover .w-button-icon {
   background-color: #b1b1b1;
+}
+
+.w-checkbox {
+  font-size: 15px;
+}
+.w-checkbox-toggle {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: #dddddd;
+}
+.w-checkbox-toggle:after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  border: 2px solid gray;
+  transition: all 0.3s;
+}
+.w-checkbox-toggle-disabled {
+  cursor: default;
+  background-color: #eeeeee;
+  background-color: #dddddd !important;
+}
+.w-checkbox-toggle-disabled:after {
+  border: 2px solid #dddddd;
+}
+.w-checkbox-label {
+  position: relative;
+  left: 5px;
+  top: -2px;
+}
+.w-checkbox-label-disabled {
+  color: #b1b1b1;
+}
+.w-checkbox .w-checkbox:checked + .w-checkbox-toggle::after {
+  box-shadow: inset 0px 0px 0px 2px #fff;
+  background-color: #616161;
+  border-radius: 3px;
+}
+.w-checkbox .w-checkbox {
+  display: none;
 }
 
 .w-code-title {

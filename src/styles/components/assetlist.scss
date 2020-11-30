@@ -1,0 +1,32 @@
+@use '../colors';
+
+.w-assetlist {
+  color: $primary-color;
+  background-color: $background-color;
+  // margin: 10px;
+  width: 220px;
+
+  &-grid {
+    cursor: pointer;
+    display: grid;
+    border-radius: 4px;
+    grid-template-columns: 2em 2.5em 10em;
+    // height: 30px;
+    padding: 5px;
+    // position: relative;
+    // top: 50%;
+// transform: translateY(-50%);
+    // padding: 5px;
+  }
+
+  &-grid:hover {
+    // font-weight: 600;
+    color: $primary-color-hover;
+    background-color: $primary-background-color-hover;
+
+    // .icon {
+    //   background-color: $primary-color-hover;
+    // }
+  }
+
+}

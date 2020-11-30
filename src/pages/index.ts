@@ -2,6 +2,7 @@
 import Assets from "./Assets.svelte";
 import AssetsList from "./AssetsList.svelte";
 import Buttons from "./Buttons.svelte";
+import Checkboxes from "./Checkboxes.svelte";
 import Dividers from "./Dividers.svelte";
 import GetStarted from "./GetStarted.svelte";
 import Grids from "./Grids.svelte";
@@ -16,6 +17,7 @@ export default {
   Assets,
   AssetsList,
   Buttons,
+  Checkboxes,
   Dividers,
   GetStarted,
   Grids,

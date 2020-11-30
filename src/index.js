@@ -6,7 +6,9 @@
  * @see {@link ../package.json}
  */
 import Asset  from './components/asset/index.svelte';
+import AssetList  from './components/assetlist/index.svelte';
 import Button  from './components/button/index.svelte';
+import Checkbox  from './components/checkbox/index.svelte';
 import Panel from './components/panel/index.svelte';
 import Divider from './components/divider/index.svelte';
 import Search from './components/search/index.svelte';
@@ -17,7 +19,9 @@ import TextField from './components/textfield/index.svelte';
 
 export { 
   Asset,
+  AssetList,
   Button,
+  Checkbox,
   Panel,
   Divider,
   Search,
