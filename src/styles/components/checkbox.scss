@@ -3,7 +3,7 @@
 .w-checkbox {
   font-size: 15px;
 
-  &-toggle {   
+  &-toggle {
     cursor: pointer;
     position: relative;
     display: inline-block;
@@ -21,19 +21,8 @@
     border-radius: 3px;
     background-color: $primary-color-background;
     border: 2px solid gray;
-    transition: all 0.3s;
+    transition: all 0.2s;
   }
-
-  // Disabled
-  &-toggle-disabled {
-    cursor: default;
-    background-color: $primary-background-color-hover;
-    background-color: $primary-color-elements  !important;
-  }
-
-  &-toggle-disabled:after {
-    border: 2px solid  $primary-color-elements;
-   }
 
   &-label {
     position: relative;
@@ -50,16 +39,23 @@
     box-shadow: inset 0px 0px 0px 2px #fff;
     background-color: $primary-color-strong;
     border-radius: 3px;
-  } 
+  }
 
-  // Checkbox cheked toggle label bg color 
-  // .w-checkbox:checked+.w-checkbox-toggle {
-    // border-radius: 3px;
-  // }
+  // Disabled
+  &-toggle-disabled {
+    cursor: default;
+  }
+
+  &-toggle-disabled:after {
+    border: 2px solid $primary-color-elements;
+  }
+
+  .w-checkbox:checked+.w-checkbox-toggle-disabled::after {
+    background-color: $primary-color-disabled;
+  }
 
   // Checkbox vanished 
   .w-checkbox {
     display: none;
   }
 }
-

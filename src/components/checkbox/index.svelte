@@ -17,7 +17,7 @@
 <div class="w-checkbox">
   <input type="checkbox" class="w-checkbox" bind:checked />
   <label
-    for="w-switch"
+    for="w-checkbox"
     class={'w-checkbox-toggle ' + (disabled ? 'w-checkbox-toggle-disabled' : '')}
     on:click={click} />
   <span class={'w-checkbox-label ' + (disabled ? 'w-checkbox-label-disabled' : '')}>

@@ -2166,11 +2166,11 @@ var components = (function () {
     			attr_dev(input, "type", "checkbox");
     			attr_dev(input, "class", "w-checkbox");
     			add_location(input, file$1, 14, 2, 343);
-    			attr_dev(label_1, "for", "w-switch");
+    			attr_dev(label_1, "for", "w-checkbox");
     			attr_dev(label_1, "class", label_1_class_value = "w-checkbox-toggle " + (/*disabled*/ ctx[2] ? "w-checkbox-toggle-disabled" : ""));
     			add_location(label_1, file$1, 15, 2, 403);
     			attr_dev(span, "class", span_class_value = "w-checkbox-label " + (/*disabled*/ ctx[2] ? "w-checkbox-label-disabled" : ""));
-    			add_location(span, file$1, 19, 2, 537);
+    			add_location(span, file$1, 19, 2, 539);
     			attr_dev(div, "class", "w-checkbox");
     			add_location(div, file$1, 13, 0, 316);
     		},
@@ -6097,7 +6097,7 @@ var components = (function () {
     const file$f = "src/pages/Checkboxes.svelte";
 
     // (10:0) <Panel shadow={true}>
-    function create_default_slot_1$3(ctx) {
+    function create_default_slot_2$3(ctx) {
     	let t;
 
     	const block = {
@@ -6114,7 +6114,7 @@ var components = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1$3.name,
+    		id: create_default_slot_2$3.name,
     		type: "slot",
     		source: "(10:0) <Panel shadow={true}>",
     		ctx
@@ -6123,14 +6123,54 @@ var components = (function () {
     	return block;
     }
 
+    // (24:2) <Code>
+    function create_default_slot_1$3(ctx) {
+    	let html_tag;
+    	let raw_value = highlight("let checked = false;\n\n" + "<Checkbox label=\"Checkbox {checked ? 'on' : 'off'}\" bind:checked />\n" + "<Checkbox label=\"Checkbox on (disabled)\" checked={true} disabled={true} />") + "";
+    	let html_anchor;
+
+    	const block = {
+    		c: function create() {
+    			html_anchor = empty();
+    			html_tag = new HtmlTag(html_anchor);
+    		},
+    		m: function mount(target, anchor) {
+    			html_tag.m(raw_value, target, anchor);
+    			insert_dev(target, html_anchor, anchor);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(html_anchor);
+    			if (detaching) html_tag.d();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_1$3.name,
+    		type: "slot",
+    		source: "(24:2) <Code>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
     // (14:0) <Panel shadow={true}>
     function create_default_slot$3(ctx) {
-    	let div;
+    	let div0;
     	let checkbox0;
     	let updating_checked;
-    	let t;
+    	let t0;
     	let checkbox1;
     	let updating_checked_1;
+    	let t1;
+    	let div1;
+    	let checkbox2;
+    	let t2;
+    	let checkbox3;
+    	let t3;
+    	let code;
     	let current;
 
     	function checkbox0_checked_binding(value) {
@@ -6138,7 +6178,7 @@ var components = (function () {
     	}
 
     	let checkbox0_props = {
-    		label: "Switch " + (/*checked*/ ctx[0] ? "on" : "off")
+    		label: "Checkbox " + (/*checked*/ ctx[0] ? "on" : "off")
     	};
 
     	if (/*checked*/ ctx[0] !== void 0) {
@@ -6153,7 +6193,7 @@ var components = (function () {
     	}
 
     	let checkbox1_props = {
-    		label: "Switch " + (/*checked2*/ ctx[1] ? "on" : "off")
+    		label: "Checkbox " + (/*checked2*/ ctx[1] ? "on" : "off")
     	};
 
     	if (/*checked2*/ ctx[1] !== void 0) {
@@ -6163,25 +6203,67 @@ var components = (function () {
     	checkbox1 = new Checkbox({ props: checkbox1_props, $$inline: true });
     	binding_callbacks.push(() => bind(checkbox1, "checked", checkbox1_checked_binding));
 
+    	checkbox2 = new Checkbox({
+    			props: {
+    				label: "Checkbox off (disabled)",
+    				checked: false,
+    				disabled: true
+    			},
+    			$$inline: true
+    		});
+
+    	checkbox3 = new Checkbox({
+    			props: {
+    				label: "Checkbox on (disabled)",
+    				checked: true,
+    				disabled: true
+    			},
+    			$$inline: true
+    		});
+
+    	code = new Code({
+    			props: {
+    				$$slots: { default: [create_default_slot_1$3] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
     	const block = {
     		c: function create() {
-    			div = element("div");
+    			div0 = element("div");
     			create_component(checkbox0.$$.fragment);
-    			t = space();
+    			t0 = space();
     			create_component(checkbox1.$$.fragment);
-    			attr_dev(div, "class", "w-grid w-grid-container-2-16");
-    			add_location(div, file$f, 14, 2, 323);
+    			t1 = space();
+    			div1 = element("div");
+    			create_component(checkbox2.$$.fragment);
+    			t2 = space();
+    			create_component(checkbox3.$$.fragment);
+    			t3 = space();
+    			create_component(code.$$.fragment);
+    			attr_dev(div0, "class", "w-grid w-grid-container-2-16");
+    			add_location(div0, file$f, 14, 2, 323);
+    			attr_dev(div1, "class", "w-grid w-grid-container-2-16");
+    			add_location(div1, file$f, 18, 2, 533);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			mount_component(checkbox0, div, null);
-    			append_dev(div, t);
-    			mount_component(checkbox1, div, null);
+    			insert_dev(target, div0, anchor);
+    			mount_component(checkbox0, div0, null);
+    			append_dev(div0, t0);
+    			mount_component(checkbox1, div0, null);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div1, anchor);
+    			mount_component(checkbox2, div1, null);
+    			append_dev(div1, t2);
+    			mount_component(checkbox3, div1, null);
+    			insert_dev(target, t3, anchor);
+    			mount_component(code, target, anchor);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
     			const checkbox0_changes = {};
-    			if (dirty & /*checked*/ 1) checkbox0_changes.label = "Switch " + (/*checked*/ ctx[0] ? "on" : "off");
+    			if (dirty & /*checked*/ 1) checkbox0_changes.label = "Checkbox " + (/*checked*/ ctx[0] ? "on" : "off");
 
     			if (!updating_checked && dirty & /*checked*/ 1) {
     				updating_checked = true;
@@ -6191,7 +6273,7 @@ var components = (function () {
 
     			checkbox0.$set(checkbox0_changes);
     			const checkbox1_changes = {};
-    			if (dirty & /*checked2*/ 2) checkbox1_changes.label = "Switch " + (/*checked2*/ ctx[1] ? "on" : "off");
+    			if (dirty & /*checked2*/ 2) checkbox1_changes.label = "Checkbox " + (/*checked2*/ ctx[1] ? "on" : "off");
 
     			if (!updating_checked_1 && dirty & /*checked2*/ 2) {
     				updating_checked_1 = true;
@@ -6200,22 +6282,41 @@ var components = (function () {
     			}
 
     			checkbox1.$set(checkbox1_changes);
+    			const code_changes = {};
+
+    			if (dirty & /*$$scope*/ 16) {
+    				code_changes.$$scope = { dirty, ctx };
+    			}
+
+    			code.$set(code_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
     			transition_in(checkbox0.$$.fragment, local);
     			transition_in(checkbox1.$$.fragment, local);
+    			transition_in(checkbox2.$$.fragment, local);
+    			transition_in(checkbox3.$$.fragment, local);
+    			transition_in(code.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(checkbox0.$$.fragment, local);
     			transition_out(checkbox1.$$.fragment, local);
+    			transition_out(checkbox2.$$.fragment, local);
+    			transition_out(checkbox3.$$.fragment, local);
+    			transition_out(code.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(div0);
     			destroy_component(checkbox0);
     			destroy_component(checkbox1);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div1);
+    			destroy_component(checkbox2);
+    			destroy_component(checkbox3);
+    			if (detaching) detach_dev(t3);
+    			destroy_component(code, detaching);
     		}
     	};
 
@@ -6241,7 +6342,7 @@ var components = (function () {
     	panel0 = new Panel({
     			props: {
     				shadow: true,
-    				$$slots: { default: [create_default_slot_1$3] },
+    				$$slots: { default: [create_default_slot_2$3] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -6418,7 +6519,7 @@ var components = (function () {
     }
 
     // (8:0) <Panel title="Divider vertical" shadow={true}>
-    function create_default_slot_2$3(ctx) {
+    function create_default_slot_2$4(ctx) {
     	let div0;
     	let t1;
     	let div1;
@@ -6574,7 +6675,7 @@ var components = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$3.name,
+    		id: create_default_slot_2$4.name,
     		type: "slot",
     		source: "(8:0) <Panel title=\\\"Divider vertical\\\" shadow={true}>",
     		ctx
@@ -6785,7 +6886,7 @@ var components = (function () {
     			props: {
     				title: "Divider vertical",
     				shadow: true,
-    				$$slots: { default: [create_default_slot_2$3] },
+    				$$slots: { default: [create_default_slot_2$4] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7112,7 +7213,7 @@ var components = (function () {
     }
 
     // (18:0) <Panel title="Two columns grid" shadow={true}>
-    function create_default_slot_2$4(ctx) {
+    function create_default_slot_2$5(ctx) {
     	let div2;
     	let div0;
     	let t1;
@@ -7248,7 +7349,7 @@ var components = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$4.name,
+    		id: create_default_slot_2$5.name,
     		type: "slot",
     		source: "(18:0) <Panel title=\\\"Two columns grid\\\" shadow={true}>",
     		ctx
@@ -7483,7 +7584,7 @@ var components = (function () {
     			props: {
     				title: "Two columns grid",
     				shadow: true,
-    				$$slots: { default: [create_default_slot_2$4] },
+    				$$slots: { default: [create_default_slot_2$5] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7740,7 +7841,7 @@ var components = (function () {
     }
 
     // (15:0) <Panel title="Simple panel">
-    function create_default_slot_2$5(ctx) {
+    function create_default_slot_2$6(ctx) {
     	let code;
     	let current;
 
@@ -7785,7 +7886,7 @@ var components = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$5.name,
+    		id: create_default_slot_2$6.name,
     		type: "slot",
     		source: "(15:0) <Panel title=\\\"Simple panel\\\">",
     		ctx
@@ -7904,7 +8005,7 @@ var components = (function () {
     	panel1 = new Panel({
     			props: {
     				title: "Simple panel",
-    				$$slots: { default: [create_default_slot_2$5] },
+    				$$slots: { default: [create_default_slot_2$6] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -8325,7 +8426,7 @@ var components = (function () {
     }
 
     // (27:0) <Panel title="Standard usage" shadow={true}>
-    function create_default_slot_2$6(ctx) {
+    function create_default_slot_2$7(ctx) {
     	let sidenavigation;
     	let t0;
     	let br;
@@ -8397,7 +8498,7 @@ var components = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$6.name,
+    		id: create_default_slot_2$7.name,
     		type: "slot",
     		source: "(27:0) <Panel title=\\\"Standard usage\\\" shadow={true}>",
     		ctx
@@ -8544,7 +8645,7 @@ var components = (function () {
     			props: {
     				title: "Standard usage",
     				shadow: true,
-    				$$slots: { default: [create_default_slot_2$6] },
+    				$$slots: { default: [create_default_slot_2$7] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -9149,7 +9250,7 @@ var components = (function () {
     }
 
     // (32:0) <Panel title="Basic tabs" shadow={true}>
-    function create_default_slot_2$7(ctx) {
+    function create_default_slot_2$8(ctx) {
     	let tabs;
     	let updating_items;
     	let t0;
@@ -9279,7 +9380,7 @@ var components = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$7.name,
+    		id: create_default_slot_2$8.name,
     		type: "slot",
     		source: "(32:0) <Panel title=\\\"Basic tabs\\\" shadow={true}>",
     		ctx
@@ -9487,7 +9588,7 @@ var components = (function () {
     			props: {
     				title: "Basic tabs",
     				shadow: true,
-    				$$slots: { default: [create_default_slot_2$7] },
+    				$$slots: { default: [create_default_slot_2$8] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -9957,7 +10058,7 @@ var components = (function () {
     }
 
     // (26:0) <Panel title="Valid Text Field" shadow={true}>
-    function create_default_slot_2$8(ctx) {
+    function create_default_slot_2$9(ctx) {
     	let div;
     	let textfield0;
     	let t0;
@@ -10046,7 +10147,7 @@ var components = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$8.name,
+    		id: create_default_slot_2$9.name,
     		type: "slot",
     		source: "(26:0) <Panel title=\\\"Valid Text Field\\\" shadow={true}>",
     		ctx
@@ -10223,7 +10324,7 @@ var components = (function () {
     			props: {
     				title: "Valid Text Field",
     				shadow: true,
-    				$$slots: { default: [create_default_slot_2$8] },
+    				$$slots: { default: [create_default_slot_2$9] },
     				$$scope: { ctx }
     			},
     			$$inline: true

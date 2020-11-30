@@ -332,15 +332,7 @@ h3 {
   border-radius: 3px;
   background-color: #ffffff;
   border: 2px solid gray;
-  transition: all 0.3s;
-}
-.w-checkbox-toggle-disabled {
-  cursor: default;
-  background-color: #eeeeee;
-  background-color: #dddddd !important;
-}
-.w-checkbox-toggle-disabled:after {
-  border: 2px solid #dddddd;
+  transition: all 0.2s;
 }
 .w-checkbox-label {
   position: relative;
@@ -354,6 +346,15 @@ h3 {
   box-shadow: inset 0px 0px 0px 2px #fff;
   background-color: #616161;
   border-radius: 3px;
+}
+.w-checkbox-toggle-disabled {
+  cursor: default;
+}
+.w-checkbox-toggle-disabled:after {
+  border: 2px solid #dddddd;
+}
+.w-checkbox .w-checkbox:checked + .w-checkbox-toggle-disabled::after {
+  background-color: #b1b1b1;
 }
 .w-checkbox .w-checkbox {
   display: none;
